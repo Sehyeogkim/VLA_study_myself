@@ -206,6 +206,10 @@ def main():
     print(f"params: {sum(p.numel() for p in model.parameters()):,}")
     losses = train(model, args.dataset, args.steps, args.batch_size, args.lr)
 
+    ckpt = Path(__file__).parent / f"step1_{args.dataset}.pt"
+    torch.save(model.state_dict(), ckpt)
+    print(f"model saved: {ckpt}")
+
     out_prefix = FIG_DIR / f"step1_{args.dataset}"
     plot_all(model, args.dataset, losses, out_prefix)
     print(f"figures saved: {out_prefix}_*.png")
