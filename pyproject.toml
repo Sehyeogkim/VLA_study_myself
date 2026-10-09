@@ -1,0 +1,10 @@
+[project]
+name = "vla-study"
+version = "0.1.0"
+description = "VLA 5주 로드맵 학습 레포"
+requires-python = ">=3.11"
+dependencies = [
+    "torch",
+    "numpy",
+    "matplotlib",
+]
