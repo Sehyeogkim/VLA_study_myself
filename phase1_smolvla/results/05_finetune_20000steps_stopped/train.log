@@ -1,0 +1,44 @@
+device=cuda  steps=20000  batch=64  out=/workspace/VLA/phase1_smolvla/results/05_finetune_20000steps
+train frames=10584  val frames=1355
+Loading  HuggingFaceTB/SmolVLM2-500M-Video-Instruct weights ...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Reducing the number of VLM layers to 16 ...
+trainable params: 99,880,992
+[before] val chunk MAE per joint: [30.85, 25.27, 16.41, 10.5, 16.6, 6.52]  mean: 17.69
+step     0  val 0.9376
+step   100  loss 0.3795  grad   1.77  lr 1.51e-05  1.03 it/s  eta 323.2m
+step   200  loss 0.2720  grad   2.04  lr 3.01e-05  1.01 it/s  eta 325.6m
+step   300  loss 0.2357  grad   1.94  lr 4.51e-05  1.02 it/s  eta 322.6m
+step   400  loss 0.1879  grad   1.36  lr 6.01e-05  1.01 it/s  eta 323.0m
+step   500  loss 0.1832  grad   1.80  lr 7.51e-05  1.00 it/s  eta 324.2m  | val 0.2789
+step   600  loss 0.1631  grad   1.34  lr 9.01e-05  1.00 it/s  eta 321.7m
+step   700  loss 0.1817  grad   1.95  lr 9.97e-05  1.00 it/s  eta 320.3m
+step   800  loss 0.1920  grad   1.40  lr 9.96e-05  1.01 it/s  eta 317.7m
+step   900  loss 0.1876  grad   1.38  lr 9.95e-05  1.01 it/s  eta 316.4m
+step  1000  loss 0.1670  grad   1.43  lr 9.94e-05  1.00 it/s  eta 315.7m  | val 0.2992
+step  1100  loss 0.1698  grad   1.19  lr 9.93e-05  1.01 it/s  eta 313.3m
+step  1200  loss 0.1336  grad   0.93  lr 9.91e-05  1.00 it/s  eta 311.9m
+step  1300  loss 0.1326  grad   1.17  lr 9.90e-05  1.01 it/s  eta 309.8m
+step  1400  loss 0.1467  grad   1.38  lr 9.88e-05  1.01 it/s  eta 308.3m
+step  1500  loss 0.1370  grad   1.49  lr 9.87e-05  1.00 it/s  eta 307.5m  | val 0.2671
+step  1600  loss 0.1327  grad   1.32  lr 9.85e-05  1.00 it/s  eta 305.4m
+step  1700  loss 0.1385  grad   1.28  lr 9.83e-05  1.00 it/s  eta 303.8m
+step  1800  loss 0.1082  grad   1.68  lr 9.81e-05  1.00 it/s  eta 301.9m
+step  1900  loss 0.1206  grad   1.19  lr 9.78e-05  1.00 it/s  eta 300.4m
+step  2000  loss 0.1165  grad   1.20  lr 9.76e-05  1.00 it/s  eta 299.2m  | val 0.3014
+step  2100  loss 0.1266  grad   0.96  lr 9.74e-05  1.00 it/s  eta 297.2m
+step  2200  loss 0.1062  grad   1.29  lr 9.71e-05  1.00 it/s  eta 295.8m
+step  2300  loss 0.1101  grad   1.76  lr 9.69e-05  1.00 it/s  eta 293.9m
+step  2400  loss 0.1069  grad   0.85  lr 9.66e-05  1.00 it/s  eta 292.4m
+step  2500  loss 0.1212  grad   1.35  lr 9.63e-05  1.00 it/s  eta 291.2m  | val 0.2841
+step  2600  loss 0.1291  grad   0.89  lr 9.60e-05  1.00 it/s  eta 289.3m
+step  2700  loss 0.1078  grad   1.15  lr 9.57e-05  1.00 it/s  eta 287.8m
+step  2800  loss 0.1232  grad   1.25  lr 9.54e-05  1.00 it/s  eta 285.8m
+step  2900  loss 0.1024  grad   1.23  lr 9.50e-05  1.00 it/s  eta 284.2m
+step  3000  loss 0.0825  grad   1.17  lr 9.47e-05  1.00 it/s  eta 282.9m  | val 0.3328
+step  3100  loss 0.1018  grad   0.83  lr 9.43e-05  1.00 it/s  eta 281.1m
+step  3200  loss 0.0999  grad   1.08  lr 9.40e-05  1.00 it/s  eta 279.6m
+step  3300  loss 0.0990  grad   1.26  lr 9.36e-05  1.00 it/s  eta 277.7m
+step  3400  loss 0.0701  grad   1.19  lr 9.32e-05  1.00 it/s  eta 276.1m
+step  3500  loss 0.0928  grad   1.01  lr 9.28e-05  1.00 it/s  eta 274.8m  | val 0.3606
+step  3600  loss 0.0852  grad   0.78  lr 9.24e-05  1.00 it/s  eta 272.9m

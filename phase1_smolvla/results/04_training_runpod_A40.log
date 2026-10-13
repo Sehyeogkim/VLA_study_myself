@@ -1,0 +1,100 @@
+# 04_training.py @ RunPod (NVIDIA A40 48GB, torch 2.11+cu128, pod mkl6yxtvej2ioq, 2026-10-13)
+# run1: Step1~5 (Step6 은 matplotlib 미설치로 실패)  /  run2: matplotlib 설치 후 재실행 (다른 랜덤 batch)
+
+########## run1 ##########
+===== Step1 batch =====
+action                                   (2, 50, 6)
+action_is_pad                            (2, 50)
+index                                    (2,)
+task_index                               (2,)
+episode_index                            (2,)
+frame_index                              (2,)
+timestamp                                (2,)
+observation.state                        (2, 6)
+observation.images.camera1               (2, 3, 480, 640)
+observation.images.camera2               (2, 3, 480, 640)
+observation.language.tokens              (2, 48)
+observation.language.attention_mask      (2, 48)
+action raw  [0,0]: tensor([-47.1324,  -8.6316,  45.7442,  50.7012, -82.1734,   1.4683])
+action norm [0,0]: tensor([-1.2377,  1.2973, -0.6725, -1.3960, -1.6186, -0.5979], device='cuda:0')
+dataset action mean: [  8.02106888 -55.96235636  65.25566837  69.18185074 -53.41991514
+dataset action std : [44.56300727 36.48508632 29.01199308 13.23810406 17.76442086  8.99904311]
+===== Step2 flow matching inputs =====
+actions: (2, 50, 32)  noise: (2, 50, 32)  t: tensor([0.9082, 0.4779], device='cuda:0')
+x_t: (2, 50, 32)  u_t: (2, 50, 32)
+x_t 식 일치? True
+u_t 식 일치? True
+===== Step3 loss =====
+losses (elementwise): (2, 50, 32)
+pad 개수: 0  num_valid: 600
+my loss       : 1.44158935546875
+policy.forward: 1.44158935546875
+일치? True
+{'losses_after_forward': 1.44158935546875, 'losses_after_in_ep_bound': 1.44158935546875, 'losses_after_rm_padding': 1.44158935546875, 'loss': 1.44158935546875}
+===== Step4 grad check =====
+group                                params  requires_grad     has grad
+VLM vision encoder (SigLIP)      86,433,024              0            0
+VLM connector                    11,796,480              0            0
+VLM text model (16 layers)      204,626,880              0            0
+VLM lm_head                      47,308,800              0            0
+action expert                    98,245,840     98,245,840   98,245,840
+state_proj                           31,680         31,680       31,680
+action_in_proj                       23,760         23,760       23,760
+action_out_proj                      23,072         23,072       23,072
+action_time_mlp_in                1,037,520      1,037,520    1,037,520
+action_time_mlp_out                 519,120        519,120      519,120
+TOTAL                           450,046,176     99,880,992   (22.2% 학습)
+===== Step5 optimizer =====
+AdamW (
+Parameter Group 0
+)
+step  0  loss 1.4416  grad_norm 22.698
+step  1  loss 5.9603  grad_norm 81.764
+step  2  loss 0.9688  grad_norm 16.913
+step  3  loss 0.5942  grad_norm 11.691
+step  4  loss 0.4786  grad_norm 8.997
+step  5  loss 0.2728  grad_norm 5.112
+step  6  loss 0.2083  grad_norm 5.676
+step  7  loss 0.1897  grad_norm 6.134
+step  8  loss 0.1340  grad_norm 4.085
+step  9  loss 0.1059  grad_norm 2.951
+step 10  loss 0.1100  grad_norm 4.104
+step 11  loss 0.0940  grad_norm 3.886
+step 12  loss 0.0646  grad_norm 2.619
+step 13  loss 0.0449  grad_norm 1.583
+step 14  loss 0.0430  grad_norm 2.099
+step 15  loss 0.0465  grad_norm 2.384
+step 16  loss 0.0466  grad_norm 2.064
+step 17  loss 0.0421  grad_norm 1.391
+step 18  loss 0.0361  grad_norm 1.142
+step 19  loss 0.0301  grad_norm 1.430
+학습 W 변함?    True
+freeze W 변함?  False
+|ΔW| mean (action_out_proj): 4.9690304877003655e-05
+
+########## run2 (train_loss_lr.png 는 이 run 결과) ##########
+step  0  loss 0.8726  grad_norm 15.056
+step  1  loss 3.3501  grad_norm 46.976
+step  2  loss 0.6421  grad_norm 10.530
+step  3  loss 0.6919  grad_norm 16.327
+step  4  loss 0.4299  grad_norm 10.223
+step  5  loss 0.2881  grad_norm 7.314
+step  6  loss 0.2825  grad_norm 9.386
+step  7  loss 0.1845  grad_norm 6.740
+step  8  loss 0.1170  grad_norm 3.304
+step  9  loss 0.1390  grad_norm 6.007
+step 10  loss 0.1288  grad_norm 6.399
+step 11  loss 0.0845  grad_norm 4.278
+step 12  loss 0.0592  grad_norm 1.563
+step 13  loss 0.0682  grad_norm 2.936
+step 14  loss 0.0748  grad_norm 4.121
+step 15  loss 0.0637  grad_norm 4.013
+step 16  loss 0.0445  grad_norm 2.941
+step 17  loss 0.0326  grad_norm 1.508
+step 18  loss 0.0328  grad_norm 1.476
+step 19  loss 0.0373  grad_norm 2.452
+학습 W 변함?    True
+freeze W 변함?  False
+|ΔW| mean (action_out_proj): 5.0834154535550624e-05
+lr @0, 1000, 15000, 30000: 9.990009990009991e-08 9.973294239920334e-05 5.125e-05 2.5000002673017843e-06
+saved: /workspace/VLA/phase1_smolvla/train_loss_lr.png
