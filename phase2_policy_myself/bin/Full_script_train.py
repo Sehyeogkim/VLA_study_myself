@@ -3,8 +3,6 @@ This script is for the training loop of the action expert model.
 '''
 import argparse
 from pathlib import Path
-import pandas as pd
-import numpy as np
 import torch
 from torch.utils.data import DataLoader
 from lerobot.datasets.lerobot_dataset import LeRobotDataset
@@ -110,6 +108,7 @@ class Prefix(nn.Module):
         return out
 
 class ActionExpert(nn.Module):
+
     def __init__(self, cfg: MyPolicyConfig, action_mean, action_std):
         super().__init__()
         self.cfg = cfg

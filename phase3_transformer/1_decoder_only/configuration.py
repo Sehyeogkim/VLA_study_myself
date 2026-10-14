@@ -16,3 +16,5 @@ class Config:
     # Training parameters
     L: int = 128 # this is the context window.
     batch_size: int = 32
+    lr: float = 1e-4
+    training_steps: int = 2000

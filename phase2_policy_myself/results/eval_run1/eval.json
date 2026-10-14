@@ -1,0 +1,82 @@
+{
+ "summary": {
+  "ckpt": "/workspace/VLA/phase2_policy_myself/results/run1/best.pt",
+  "n_episodes": 10,
+  "n_action_steps": 8,
+  "success_rate": 0.0,
+  "mean_coverage": 0.17670906378367834,
+  "seconds": 43.94481134414673
+ },
+ "episodes": [
+  {
+   "episode": 0,
+   "seed": 1000,
+   "success": false,
+   "coverage": 0.016161635587489693,
+   "steps": 300
+  },
+  {
+   "episode": 1,
+   "seed": 1001,
+   "success": false,
+   "coverage": 0.0,
+   "steps": 300
+  },
+  {
+   "episode": 2,
+   "seed": 1002,
+   "success": false,
+   "coverage": 0.08890295649797043,
+   "steps": 300
+  },
+  {
+   "episode": 3,
+   "seed": 1003,
+   "success": false,
+   "coverage": 0.27226216836411204,
+   "steps": 300
+  },
+  {
+   "episode": 4,
+   "seed": 1004,
+   "success": false,
+   "coverage": 0.2832879954318601,
+   "steps": 300
+  },
+  {
+   "episode": 5,
+   "seed": 1005,
+   "success": false,
+   "coverage": 0.0808407772890283,
+   "steps": 300
+  },
+  {
+   "episode": 6,
+   "seed": 1006,
+   "success": false,
+   "coverage": 0.24076817435546655,
+   "steps": 300
+  },
+  {
+   "episode": 7,
+   "seed": 1007,
+   "success": false,
+   "coverage": 0.4066231693246703,
+   "steps": 300
+  },
+  {
+   "episode": 8,
+   "seed": 1008,
+   "success": false,
+   "coverage": 0.05180257226251997,
+   "steps": 300
+  },
+  {
+   "episode": 9,
+   "seed": 1009,
+   "success": false,
+   "coverage": 0.3264411887236659,
+   "steps": 300
+  }
+ ]
+}

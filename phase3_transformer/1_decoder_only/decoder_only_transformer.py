@@ -1,11 +1,15 @@
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 """
 Decoder-only LM (GPT-style): tokenizer + your own stack (embedding → causal blocks → lm_head).
 
 Tokenizer: distilgpt2 (same BPE vocab as gpt2, 50257). Use cfg.tokenizer_name = "gpt2" if you prefer.
 No VLM — nn.Embedding lives in this module.
+
+
+Multihead Attention cases.
 """
 
 from configuration import Config
@@ -106,7 +110,7 @@ class DecoderOnlyTransformer(nn.Module):
         attn_mask = torch.triu(torch.ones(L, L, dtype=torch.bool, device=x.device), diagonal=1)
         
         # pad mask [B, L]: True = pad (key 로 안 봄)
-        key_padding_mask = lang_pad.bool()
+        key_padding_mask = (lang_pad == 0)                 # pad(0) 만 True. (lang_pad.bool() 이면 반대로 진짜 토큰을 가림 -> NaN)
 
         # Transformer layer * N
         for layer in self.layers:
@@ -119,9 +123,67 @@ class DecoderOnlyTransformer(nn.Module):
         x = self.lm_head(x)                       # [B, L, vocab] = logits
         
         return x
+    
+    # This is for the infernece.
+    @torch.no_grad()
+    def generate(
+        self,
+        prompt: str,
+        max_new_tokens: int = 80,
+        temperature: float = 0.8,
+        top_k: int | None = 40,
+    ) -> str:
+        
+        self.eval()
+        device = next(self.parameters()).device
+
+        # prompt -> token.
+        ids = torch.tensor([self.tokenizer.encode(prompt)], device=device)
+        eos = self.tokenizer.eos_token_id
+        
+        # 계속해서 반복해서 토큰을 예측하는 거임. (한 바퀴 = forward 1 번 = 토큰 1 개)
+        for _ in range(max_new_tokens):
+
+            # 1. 최근 L(128) 개 토큰만 사용 (context window)
+            ctx = ids[:, -self.cfg.L:]                       # [1, T]  정수 토큰 ID (T <= 128)
+
+            # 2. forward: 임베딩 -> 블록 6 개 -> lm_head   (self(...) = self.forward(...))
+            logits_all = self(ctx, torch.ones_like(ctx))     # [1, T, vocab]  위치마다 "다음 토큰" 점수
+
+            # 3. 마지막 위치 점수만 사용
+            logits = logits_all[:, -1, :]                    # [1, vocab]
+
+            # 4. 다음 토큰 1 개 고르기
+            if temperature <= 0:
+                # 가장 점수 높은 토큰 (항상 같은 결과)
+                next_id = logits.argmax(dim=-1, keepdim=True)            # [1, 1]
+            else:
+                # 4-1. temperature: 작으면 무난하게, 크면 다양하게
+                logits = logits / temperature
+
+                # 4-2. top_k: 상위 k 개 후보만 남기고 나머지는 -inf (확률 0)
+                if top_k is not None:
+                    topk_values, _ = torch.topk(logits, min(top_k, logits.size(-1)))   # 상위 k 개 점수
+                    kth_value = topk_values[:, -1:]                                     # k 번째 점수 (커트라인)
+                    logits[logits < kth_value] = float("-inf")
+
+                # 4-3. 점수 -> 확률 -> 확률에 따라 1 개 뽑기 (주사위)
+                probs = F.softmax(logits, dim=-1)                        # [1, vocab]  합 = 1
+                next_id = torch.multinomial(probs, num_samples=1)        # [1, 1]
+
+            # 5. 뽑은 토큰을 뒤에 붙임 -> 다음 반복의 입력이 됨
+            ids = torch.cat([ids, next_id], dim=1)           # [1, T] -> [1, T+1]
+
+            # 6. "글 끝" 토큰이면 중단
+            if next_id.item() == eos:
+                break
+
+        # 7. 토큰 ID -> 글자
+        return self.tokenizer.decode(ids[0], skip_special_tokens=True)
 
 def main():
 
+    #Inference test.
     prompt = "Hello, how are you?"
     model = DecoderOnlyTransformer()
     input_ids, lang_pad = model.tokenizer_preprocessing(prompt)
