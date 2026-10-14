@@ -7,4 +7,9 @@ dependencies = [
     "torch",
     "numpy",
     "matplotlib",
+    "pandas>=3.0.6",
+    "pyarrow>=26.0.0",
+    "av>=18.1.0",
+    "transformers>=5.19.0",
+    "lerobot[dataset]>=0.6.1",
 ]
