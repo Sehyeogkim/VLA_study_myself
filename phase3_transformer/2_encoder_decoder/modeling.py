@@ -43,15 +43,16 @@ class EncoderTransformer(nn.Module):
         self.tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.cfg.vocab_size = len(self.tokenizer)
-        self.token_embedding = nn.Embedding(self.cfg.vocab_size, self.cfg.d_model)
-        self.pos_embedding = nn.Embedding(self.cfg.max_seq_len, self.cfg.d_model)
-        
+        enc = cfg.encoder                                                   # encoder 쪽 크기 (d_model 1024)
+        self.token_embedding = nn.Embedding(self.cfg.vocab_size, enc.d_model)
+        self.pos_embedding = nn.Embedding(self.cfg.max_seq_len, enc.d_model)
+
         # Define the Multi Head Attention block.
         self.layers = nn.ModuleList()
-        for _ in range(self.cfg.num_layers):
-            self.layers.append(TransformerBlock(self.cfg))
+        for _ in range(enc.num_layers):
+            self.layers.append(TransformerBlock(enc))                       # 블록 안의 cfg.d_model = 1024
         # Final LN after encoder stack (paper Figure 1; stabilizes memory for cross-attention).
-        self.ln_f = nn.LayerNorm(cfg.d_model)
+        self.ln_f = nn.LayerNorm(enc.d_model)
 
     def tokenizer_preprocessing(self, text):
         '''
@@ -75,14 +76,14 @@ class EncoderTransformer(nn.Module):
         Output: hidden_states
         '''
         # token -> embedding
-        lang_tokens = self.token_embedding(input_ids) # [B, L, d_model]
+        lang_tokens = self.token_embedding(input_ids) # [B, L, d_encoder]
         
         # create position -> embedding 
         position_ids = (torch.cumsum(lang_pad, dim=1) - 1).clamp(min=0)   # [B, L]
-        pos_tokens = self.pos_embedding(position_ids)                     # [B, L, d_model]
+        pos_tokens = self.pos_embedding(position_ids)                     # [B, L, d_encoder]
         
         # Just add in here
-        x = lang_tokens + pos_tokens                                      # [B, L, d_model]
+        x = lang_tokens + pos_tokens                                      # [B, L, d_encoder]
         
         #attn_mask = torch.ones(x.shape[1], x.shape[1], dtype=torch.bool, device=x.device)
         attn_mask = None
@@ -105,17 +106,19 @@ class DecoderTransformer(nn.Module):
         self.tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.cfg.vocab_size = len(self.tokenizer)
-        self.token_embedding = nn.Embedding(self.cfg.vocab_size, self.cfg.d_model)
-        self.pos_embedding = nn.Embedding(self.cfg.max_seq_len, self.cfg.d_model)
+        dec = cfg.decoder                                                   # decoder 쪽 크기 (d_model 512)
+        self.token_embedding = nn.Embedding(self.cfg.vocab_size, dec.d_model)
+        self.pos_embedding = nn.Embedding(self.cfg.max_seq_len, dec.d_model)
 
         
 
         self.decoder_layers = nn.ModuleList()
-        for _ in range(self.cfg.num_layers):
-            self.decoder_layers.append(DecoderTransformerBlock(self.cfg))
+        for _ in range(dec.num_layers):
+            # cross-attn 의 K, V 입력 = encoder 출력 차원
+            self.decoder_layers.append(DecoderTransformerBlock(dec, cfg.encoder.d_model))
         # Final LN before vocab projection (same role as ln_f in decoder-only GPT stack).
-        self.ln_f = nn.LayerNorm(cfg.d_model)
-        self.lm_head = nn.Linear(self.cfg.d_model, self.cfg.vocab_size)
+        self.ln_f = nn.LayerNorm(dec.d_model)
+        self.lm_head = nn.Linear(dec.d_model, self.cfg.vocab_size)
 
     def tokenizer_preprocessing(self, text):
         '''

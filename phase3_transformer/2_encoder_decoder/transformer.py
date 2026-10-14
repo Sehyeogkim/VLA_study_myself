@@ -108,14 +108,18 @@ class MultiHeadCrossAttention(nn.Module):
     '''
     reference by attention is all you need figure1.
     '''
-    def __init__(self, cfg):
+    def __init__(self, cfg, d_memory):
+        '''
+        cfg      : decoder 쪽 BlockConfig (Q, 출력 차원 = cfg.d_model)   e.g. 512
+        d_memory : encoder 출력 차원 (K, V 입력 차원)                    e.g. 1024
+        '''
         super().__init__()
         assert cfg.d_model % cfg.nhead == 0
         self.H = cfg.nhead
         self.Dh = cfg.d_model // cfg.nhead
         self.W_q = nn.Linear(cfg.d_model, cfg.d_model)
-        self.W_k = nn.Linear(cfg.d_model, cfg.d_model)
-        self.W_v = nn.Linear(cfg.d_model, cfg.d_model)
+        self.W_k = nn.Linear(d_memory, cfg.d_model) # encoder hidden states to model hidden states.
+        self.W_v = nn.Linear(d_memory, cfg.d_model) # encoder hidden states to model hidden states.
         self.W_o = nn.Linear(cfg.d_model, cfg.d_model)
         self.dropout = nn.Dropout(cfg.dropout)
     
@@ -161,7 +165,7 @@ class DecoderTransformerBlock(nn.Module):
     referece by attention is all you need figure1.
     '''
 
-    def __init__(self, cfg):
+    def __init__(self, cfg, d_memory):
         super().__init__()
         self.LN1 = nn.LayerNorm(cfg.d_model)
         self.LN2 = nn.LayerNorm(cfg.d_model)
@@ -173,7 +177,7 @@ class DecoderTransformerBlock(nn.Module):
         
         # call the instnace for the attention module will be diefnie further classes.
         self.self_attention = MultiHeadSelfAttention(cfg)
-        self.cross_attention = MultiHeadCrossAttention(cfg)
+        self.cross_attention = MultiHeadCrossAttention(cfg, d_memory)
     
     def forward(self, x, memory, causal_attn_mask, dec_key_padding_mask, enc_key_padding_mask):
         '''
