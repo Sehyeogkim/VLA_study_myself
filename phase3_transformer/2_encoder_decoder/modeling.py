@@ -40,9 +40,12 @@ class EncoderTransformer(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
-        self.tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
-        self.tokenizer.pad_token = self.tokenizer.eos_token
-        self.cfg.vocab_size = len(self.tokenizer)
+        # vocab_size 를 미리 정해주면 (예: 문자 단위 vocab, train_reverse.py) GPT-2 tokenizer 안 씀
+        self.tokenizer = None
+        if self.cfg.vocab_size is None:
+            self.tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+            self.cfg.vocab_size = len(self.tokenizer)
         enc = cfg.encoder                                                   # encoder 쪽 크기 (d_model 1024)
         self.token_embedding = nn.Embedding(self.cfg.vocab_size, enc.d_model)
         self.pos_embedding = nn.Embedding(self.cfg.max_seq_len, enc.d_model)
@@ -103,9 +106,12 @@ class DecoderTransformer(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.cfg = cfg
-        self.tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
-        self.tokenizer.pad_token = self.tokenizer.eos_token
-        self.cfg.vocab_size = len(self.tokenizer)
+        # vocab_size 를 미리 정해주면 (예: 문자 단위 vocab, train_reverse.py) GPT-2 tokenizer 안 씀
+        self.tokenizer = None
+        if self.cfg.vocab_size is None:
+            self.tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+            self.cfg.vocab_size = len(self.tokenizer)
         dec = cfg.decoder                                                   # decoder 쪽 크기 (d_model 512)
         self.token_embedding = nn.Embedding(self.cfg.vocab_size, dec.d_model)
         self.pos_embedding = nn.Embedding(self.cfg.max_seq_len, dec.d_model)
