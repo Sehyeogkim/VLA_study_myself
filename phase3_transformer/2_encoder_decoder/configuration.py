@@ -50,6 +50,8 @@ class Config:
     # --- Training (train.py — mirror phase1 decoder-only) ---
     batch_size: int = 32
     lr: float = 1e-4
+    warmup_steps: int = 200            # lr 0 -> lr 로 서서히 (Adam 초반 spike 방지), 그 뒤 cosine
+    bpe_vocab_size: int = 8000         # train.py 에서 직접 학습하는 BPE tokenizer 크기 (영어+한국어 공용)
     weight_decay: float = 0.0
     training_steps: int = 2000
     val_every: int = 250

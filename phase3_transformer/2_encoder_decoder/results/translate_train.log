@@ -1,0 +1,372 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating test split:   0%|          | 0/2000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 2000/2000 [00:00<00:00, 125455.89 examples/s]
+Generating train split:   0%|          | 0/1000000 [00:00<?, ? examples/s]Generating train split:   3%|▎         | 31000/1000000 [00:00<00:03, 305934.59 examples/s]Generating train split:   9%|▊         | 86000/1000000 [00:00<00:02, 442507.24 examples/s]Generating train split:  16%|█▌        | 156000/1000000 [00:00<00:01, 552458.89 examples/s]Generating train split:  22%|██▏       | 224000/1000000 [00:00<00:01, 597080.22 examples/s]Generating train split:  29%|██▉       | 294000/1000000 [00:00<00:01, 631518.23 examples/s]Generating train split:  36%|███▌      | 361000/1000000 [00:00<00:00, 642667.64 examples/s]Generating train split:  45%|████▌     | 454000/1000000 [00:00<00:00, 733803.94 examples/s]Generating train split:  54%|█████▎    | 537000/1000000 [00:00<00:00, 758240.79 examples/s]Generating train split:  68%|██████▊   | 676000/1000000 [00:00<00:00, 950723.22 examples/s]Generating train split:  79%|███████▉  | 794000/1000000 [00:01<00:00, 879914.45 examples/s]Generating train split:  91%|█████████ | 911000/1000000 [00:01<00:00, 956407.99 examples/s]Generating train split: 100%|██████████| 1000000/1000000 [00:01<00:00, 814072.14 examples/s]
+Generating validation split:   0%|          | 0/2000 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 2000/2000 [00:00<00:00, 471323.07 examples/s]
+DATA_PAIRS 100000
+
+
+
+pairs: total 100,000 | train 90,000 | val 10,000 | train batches/epoch 703 | vocab 8,000
+device cuda | params 18,792,000
+step     1 | loss 9.1425 | lr 5.00e-06 | 1.65 it/s
+step   100 | loss 7.2449 | lr 2.53e-04 | 11.54 it/s
+step   200 | loss 6.8503 | lr 5.00e-04 | 11.91 it/s
+step   300 | loss 6.7148 | lr 5.00e-04 | 12.02 it/s
+step   400 | loss 6.3483 | lr 5.00e-04 | 12.08 it/s
+step   500 | loss 6.0540 | lr 4.99e-04 | 12.11 it/s
+step   500 | val 6.1192  <- best (saved)
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: - 이이 안 돼
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 그래, 이이,
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: - 그래
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: - 그래, 이이,
+step   600 | loss 5.9818 | lr 4.98e-04 | 11.95 it/s
+step   700 | loss 5.7565 | lr 4.97e-04 | 11.97 it/s
+step   800 | loss 5.4953 | lr 4.96e-04 | 11.99 it/s
+step   900 | loss 5.4239 | lr 4.94e-04 | 11.99 it/s
+step  1000 | loss 5.3163 | lr 4.92e-04 | 12.00 it/s
+step  1000 | val 5.2278  <- best (saved)
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: 이쪽은 이쪽은
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: 내 말은, 내 친구를 구하는 게 아니예요
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: - 그 사람
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: - 그 사람, 이쪽은?
+step  1100 | loss 5.0968 | lr 4.90e-04 | 11.91 it/s
+step  1200 | loss 5.0691 | lr 4.88e-04 | 11.92 it/s
+step  1300 | loss 4.9425 | lr 4.85e-04 | 11.93 it/s
+step  1400 | loss 4.9546 | lr 4.83e-04 | 11.94 it/s
+step  1500 | loss 4.6833 | lr 4.80e-04 | 11.94 it/s
+step  1500 | val 4.8851  <- best (saved)
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: - 그 애들은 아주 좋은데
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: [Laughing]
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: - 아,
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: - 아, 그놈?
+step  1600 | loss 4.7031 | lr 4.76e-04 | 11.88 it/s
+step  1700 | loss 4.7505 | lr 4.73e-04 | 11.89 it/s
+step  1800 | loss 4.5193 | lr 4.69e-04 | 11.90 it/s
+step  1900 | loss 4.5020 | lr 4.66e-04 | 11.91 it/s
+step  2000 | loss 4.6319 | lr 4.62e-04 | 11.92 it/s
+step  2000 | val 4.7009  <- best (saved)
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: - 예전에 한명
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 내 딸을 위해, 제 남편
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: - 죄송해요
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: BB- Bouie, Bar?
+step  2100 | loss 4.4880 | lr 4.57e-04 | 11.87 it/s
+step  2200 | loss 4.1180 | lr 4.53e-04 | 11.88 it/s
+step  2300 | loss 4.1498 | lr 4.48e-04 | 11.88 it/s
+step  2400 | loss 4.2984 | lr 4.43e-04 | 11.89 it/s
+step  2500 | loss 3.9874 | lr 4.38e-04 | 11.90 it/s
+step  2500 | val 4.6045  <- best (saved)
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: - 정말 대단한 건 정말 좋지
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 내 딸을 죽인다고?
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: - 2005분
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: - 잘됐나?
+step  2600 | loss 4.0643 | lr 4.33e-04 | 11.87 it/s
+step  2700 | loss 3.9487 | lr 4.28e-04 | 11.87 it/s
+step  2800 | loss 3.9552 | lr 4.22e-04 | 11.88 it/s
+step  2900 | loss 3.6988 | lr 4.16e-04 | 11.88 it/s
+step  3000 | loss 3.7530 | lr 4.11e-04 | 11.89 it/s
+step  3000 | val 4.5462  <- best (saved)
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: - 한명은 하나만 더 많은 걸 환영합니다
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 내 머리에 집중해
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: - [Gasps.
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: - 잘난가요?
+step  3100 | loss 3.6806 | lr 4.05e-04 | 11.86 it/s
+step  3200 | loss 3.9343 | lr 3.98e-04 | 11.87 it/s
+step  3300 | loss 3.7372 | lr 3.92e-04 | 11.87 it/s
+step  3400 | loss 3.9472 | lr 3.86e-04 | 11.88 it/s
+step  3500 | loss 3.5729 | lr 3.79e-04 | 11.89 it/s
+step  3500 | val 4.4946  <- best (saved)
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: 지하실에 많습니다
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: [Laughing]
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: - 카드가
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 브리티가 잘생겼나?
+step  3600 | loss 3.2708 | lr 3.72e-04 | 11.86 it/s
+step  3700 | loss 3.2971 | lr 3.66e-04 | 11.87 it/s
+step  3800 | loss 3.3499 | lr 3.59e-04 | 11.87 it/s
+step  3900 | loss 3.2756 | lr 3.52e-04 | 11.88 it/s
+step  4000 | loss 3.4097 | lr 3.45e-04 | 11.88 it/s
+step  4000 | val 4.5409
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: 지식을 잃게 만들었다면
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 내 말입니다, 내 말아
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 미쳤네
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 브룩한 거절은?
+step  4100 | loss 3.4797 | lr 3.37e-04 | 11.87 it/s
+step  4200 | loss 3.2607 | lr 3.30e-04 | 11.87 it/s
+step  4300 | loss 2.7823 | lr 3.23e-04 | 11.87 it/s
+step  4400 | loss 2.8251 | lr 3.15e-04 | 11.87 it/s
+step  4500 | loss 2.9330 | lr 3.08e-04 | 11.88 it/s
+step  4500 | val 4.6108
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...신은 아주 불리해본적이 있어
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 내 딸궤지
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 다리야
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 브리켓을 지킨거야, 알았지?
+step  4600 | loss 3.1080 | lr 3.00e-04 | 11.86 it/s
+step  4700 | loss 3.0156 | lr 2.93e-04 | 11.87 it/s
+step  4800 | loss 2.9819 | lr 2.85e-04 | 11.87 it/s
+step  4900 | loss 2.8573 | lr 2.78e-04 | 11.88 it/s
+step  5000 | loss 2.6154 | lr 2.70e-04 | 11.88 it/s
+step  5000 | val 4.6604
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...신은 아주 현장에서 아주
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 내 귀신감이 정말 미안하다
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 미사일 뿐이죠
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 브래드리는 놈들아, 알았지?
+step  5100 | loss 2.5381 | lr 2.63e-04 | 11.86 it/s
+step  5200 | loss 2.5087 | lr 2.55e-04 | 11.87 it/s
+step  5300 | loss 2.6245 | lr 2.47e-04 | 11.87 it/s
+step  5400 | loss 2.8131 | lr 2.40e-04 | 11.88 it/s
+step  5500 | loss 2.4983 | lr 2.32e-04 | 11.88 it/s
+step  5500 | val 4.7388
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...신은 아주아주게 놀아.
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 세상에, 내 말 들라, 제스
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 미사일 뿐이죠
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 브루드가 뭐래?
+step  5600 | loss 2.6669 | lr 2.25e-04 | 11.87 it/s
+step  5700 | loss 2.1070 | lr 2.17e-04 | 11.87 it/s
+step  5800 | loss 2.1625 | lr 2.10e-04 | 11.87 it/s
+step  5900 | loss 2.4479 | lr 2.02e-04 | 11.88 it/s
+step  6000 | loss 2.2812 | lr 1.95e-04 | 11.88 it/s
+step  6000 | val 4.8739
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...theypea, Pasion/ state in Dakaayer than Kebrary.
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 내 말썩샤, 바바라마리
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 미사일 뿐이죠
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 그 놈들 좀 꽉 찰쑤볼까?
+step  6100 | loss 2.2193 | lr 1.88e-04 | 11.87 it/s
+step  6200 | loss 2.3243 | lr 1.80e-04 | 11.87 it/s
+step  6300 | loss 2.2549 | lr 1.73e-04 | 11.88 it/s
+step  6400 | loss 1.9250 | lr 1.66e-04 | 11.88 it/s
+step  6500 | loss 2.0178 | lr 1.59e-04 | 11.88 it/s
+step  6500 | val 4.9698
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...신은 아주 불렀을 때려했을 텐데
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: 정말 구급생활이고
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 뱀파이어.
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 배고낙고 질병은 되나?
+step  6600 | loss 2.0803 | lr 1.53e-04 | 11.87 it/s
+step  6700 | loss 1.8596 | lr 1.46e-04 | 11.87 it/s
+step  6800 | loss 1.8117 | lr 1.39e-04 | 11.88 it/s
+step  6900 | loss 2.1245 | lr 1.33e-04 | 11.88 it/s
+step  7000 | loss 2.0303 | lr 1.27e-04 | 11.88 it/s
+step  7000 | val 5.0387
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...theype, Pasasionerous size degaser, or cous is veryik.
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 난 내 말 들어봐, 베스
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 미사일 뿐이죠
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 내가 꽂아도 잘라, 알았지?
+step  7100 | loss 1.6618 | lr 1.20e-04 | 11.87 it/s
+step  7200 | loss 1.6935 | lr 1.14e-04 | 11.88 it/s
+step  7300 | loss 1.6062 | lr 1.09e-04 | 11.88 it/s
+step  7400 | loss 1.7116 | lr 1.03e-04 | 11.88 it/s
+step  7500 | loss 1.8421 | lr 9.73e-05 | 11.88 it/s
+step  7500 | val 5.1615
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...신은 아주 불렀을 때 까지릅니다
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 난 내 말 들어보스 해, 개스
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 미리자
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 내가 잘난 건물이야 알렌?
+step  7600 | loss 1.8393 | lr 9.19e-05 | 11.87 it/s
+step  7700 | loss 1.8394 | lr 8.67e-05 | 11.88 it/s
+step  7800 | loss 1.5211 | lr 8.17e-05 | 11.88 it/s
+step  7900 | loss 1.5473 | lr 7.68e-05 | 11.88 it/s
+step  8000 | loss 1.4990 | lr 7.22e-05 | 11.89 it/s
+step  8000 | val 5.2380
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...his 자를 원한 게 많죠
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 난 내 말 들어요, 베스카
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 미사일 뿐이죠
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 전투술궤도 되는데..
+step  8100 | loss 1.5637 | lr 6.77e-05 | 11.88 it/s
+step  8200 | loss 1.6207 | lr 6.35e-05 | 11.88 it/s
+step  8300 | loss 1.5729 | lr 5.94e-05 | 11.88 it/s
+step  8400 | loss 1.4845 | lr 5.56e-05 | 11.89 it/s
+step  8500 | loss 1.4333 | lr 5.19e-05 | 11.89 it/s
+step  8500 | val 5.2949
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...his 자를 원치다, 한참.
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 난 내 말 들어요.
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 미사일 뿐이죠
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 전투술이야 잘 지나가 알았지?
+step  8600 | loss 1.5662 | lr 4.85e-05 | 11.88 it/s
+step  8700 | loss 1.3466 | lr 4.53e-05 | 11.88 it/s
+step  8800 | loss 1.4261 | lr 4.24e-05 | 11.88 it/s
+step  8900 | loss 1.5277 | lr 3.96e-05 | 11.88 it/s
+step  9000 | loss 1.3940 | lr 3.71e-05 | 11.89 it/s
+step  9000 | val 5.3450
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...his 자를 원한게 소용이지
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 난 내 말 들어요.
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 미사일 뿐이죠
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 전투술궤도 되는데..
+step  9100 | loss 1.3166 | lr 3.48e-05 | 11.88 it/s
+step  9200 | loss 1.2970 | lr 3.28e-05 | 11.88 it/s
+step  9300 | loss 1.2968 | lr 3.10e-05 | 11.88 it/s
+step  9400 | loss 1.2805 | lr 2.94e-05 | 11.89 it/s
+step  9500 | loss 1.3648 | lr 2.80e-05 | 11.89 it/s
+step  9500 | val 5.3868
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...his 자를 원치다, 한명
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 난 내 말 들어요, 베스카
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 미사일 뿐이죠
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 내가 잘난 것이라고
+step  9600 | loss 1.4465 | lr 2.69e-05 | 11.88 it/s
+step  9700 | loss 1.3314 | lr 2.61e-05 | 11.88 it/s
+step  9800 | loss 1.4180 | lr 2.55e-05 | 11.88 it/s
+step  9900 | loss 1.2703 | lr 2.51e-05 | 11.89 it/s
+step 10000 | loss 1.3054 | lr 2.50e-05 | 11.89 it/s
+step 10000 | val 5.4172
+    EN  : ..and one very relieved producer.
+    REF : ..드디어 감독은 장면을 찾아냈습니다.
+    PRED: ...his 자를 원치다, 한명
+    EN  : [Laughing] Got my orders, Vargas.
+    REF : 내 명령이 있네
+    PRED: - 난 내 말 들어요.
+    EN  : Vampire.
+    REF : 나한테 물어본 거 기억나니?
+    PRED: 미사일 뿐이죠
+    EN  : Bend those knees. Balance, okay?
+    REF : 무릎 굽히고 균형 알지?
+    PRED: 내가 잘난 것 같나봐 그리고 반응이?
+saved: /workspace/p3tr/results/best.pt /workspace/p3tr/results/history.json /workspace/p3tr/results/tokenizer.json
