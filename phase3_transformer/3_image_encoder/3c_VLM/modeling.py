@@ -55,7 +55,8 @@ class VLM(torch.nn.Module):
         for p in self.vision.parameters():
             p.requires_grad = False
         for p in self.lm.parameters():
-            p.requires_grad = False
+            # p.requires_grad = False     # Stage 1: LLM 얼림
+            p.requires_grad = True        # Stage 2: LLM 풀기 (SigLIP 은 위에서 계속 얼림)
 
     def image_embeds(self, pixel_values: torch.Tensor) -> torch.Tensor:
         with torch.no_grad():                                               # vision 앞에는 학습할 게 없어서 no_grad OK

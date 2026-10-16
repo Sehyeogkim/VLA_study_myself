@@ -1,0 +1,184 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating train split:   0%|          | 0/6000 [00:00<?, ? examples/s]Generating train split:   7%|▋         | 400/6000 [00:00<00:01, 3296.92 examples/s]Generating train split:  15%|█▌        | 900/6000 [00:00<00:01, 3950.18 examples/s]Generating train split:  22%|██▏       | 1300/6000 [00:00<00:01, 3849.80 examples/s]Generating train split:  28%|██▊       | 1700/6000 [00:00<00:01, 3808.97 examples/s]Generating train split:  35%|███▌      | 2100/6000 [00:00<00:01, 3682.25 examples/s]Generating train split:  42%|████▏     | 2500/6000 [00:00<00:00, 3550.15 examples/s]Generating train split:  48%|████▊     | 2900/6000 [00:00<00:00, 3562.43 examples/s]Generating train split:  55%|█████▌    | 3300/6000 [00:00<00:00, 2990.02 examples/s]Generating train split:  63%|██████▎   | 3800/6000 [00:01<00:00, 2750.43 examples/s]Generating train split:  70%|███████   | 4200/6000 [00:01<00:00, 2904.62 examples/s]Generating train split:  77%|███████▋  | 4600/6000 [00:01<00:00, 3014.00 examples/s]Generating train split:  83%|████████▎ | 5000/6000 [00:01<00:00, 3089.70 examples/s]Generating train split:  90%|█████████ | 5400/6000 [00:01<00:00, 3102.49 examples/s]Generating train split:  97%|█████████▋| 5800/6000 [00:01<00:00, 3194.15 examples/s]Generating train split: 100%|██████████| 6000/6000 [00:01<00:00, 3303.92 examples/s]
+Generating validation split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating validation split:  50%|█████     | 500/1000 [00:00<00:00, 4034.95 examples/s]Generating validation split: 100%|██████████| 1000/1000 [00:00<00:00, 4953.78 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split:  70%|███████   | 700/1000 [00:00<00:00, 5635.64 examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 5986.42 examples/s]
+ep 0 step 50 | loss 8.3843 | lr 2.50e-05 | 12.54 it/s
+ep 0 step 100 | loss 5.7685 | lr 5.00e-05 | 13.73 it/s
+ep 0 step 150 | loss 5.2326 | lr 7.50e-05 | 14.31 it/s
+ep 0 step 200 | loss 5.3323 | lr 1.00e-04 | 14.37 it/s
+ep 0 step 250 | loss 4.4827 | lr 1.00e-04 | 14.51 it/s
+step 250 | val 4.4820
+ep 0 step 300 | loss 5.1229 | lr 1.00e-04 | 14.17 it/s
+ep 0 step 350 | loss 4.1052 | lr 9.99e-05 | 14.25 it/s
+ep 1 step 400 | loss 4.3281 | lr 9.98e-05 | 14.14 it/s
+ep 1 step 450 | loss 3.9205 | lr 9.97e-05 | 14.23 it/s
+ep 1 step 500 | loss 4.2236 | lr 9.96e-05 | 14.31 it/s
+step 500 | val 4.0532
+ep 1 step 550 | loss 4.2162 | lr 9.94e-05 | 14.08 it/s
+ep 1 step 600 | loss 3.6276 | lr 9.93e-05 | 14.18 it/s
+ep 1 step 650 | loss 3.8043 | lr 9.91e-05 | 14.22 it/s
+ep 1 step 700 | loss 4.0023 | lr 9.88e-05 | 14.28 it/s
+ep 1 step 750 | loss 3.5578 | lr 9.86e-05 | 14.31 it/s
+step 750 | val 3.8550
+ep 2 step 800 | loss 3.9264 | lr 9.83e-05 | 14.08 it/s
+ep 2 step 850 | loss 3.3535 | lr 9.81e-05 | 14.09 it/s
+ep 2 step 900 | loss 3.1769 | lr 9.77e-05 | 14.12 it/s
+ep 2 step 950 | loss 3.3879 | lr 9.74e-05 | 14.15 it/s
+ep 2 step 1000 | loss 3.4999 | lr 9.71e-05 | 14.16 it/s
+step 1000 | val 3.7297
+ep 2 step 1050 | loss 4.1438 | lr 9.67e-05 | 14.01 it/s
+ep 2 step 1100 | loss 3.5766 | lr 9.63e-05 | 14.10 it/s
+ep 3 step 1150 | loss 4.1277 | lr 9.59e-05 | 14.08 it/s
+ep 3 step 1200 | loss 3.2866 | lr 9.54e-05 | 14.09 it/s
+ep 3 step 1250 | loss 3.3622 | lr 9.50e-05 | 14.12 it/s
+step 1250 | val 3.6322
+ep 3 step 1300 | loss 3.5750 | lr 9.45e-05 | 14.04 it/s
+ep 3 step 1350 | loss 3.2150 | lr 9.40e-05 | 14.09 it/s
+ep 3 step 1400 | loss 3.3813 | lr 9.35e-05 | 14.09 it/s
+ep 3 step 1450 | loss 3.5173 | lr 9.29e-05 | 14.11 it/s
+ep 3 step 1500 | loss 3.1961 | lr 9.24e-05 | 14.11 it/s
+step 1500 | val 3.5507
+ep 4 step 1550 | loss 3.5065 | lr 9.18e-05 | 13.97 it/s
+ep 4 step 1600 | loss 2.9386 | lr 9.12e-05 | 13.97 it/s
+ep 4 step 1650 | loss 3.3595 | lr 9.06e-05 | 14.00 it/s
+ep 4 step 1700 | loss 3.2379 | lr 8.99e-05 | 14.03 it/s
+ep 4 step 1750 | loss 3.2892 | lr 8.93e-05 | 14.06 it/s
+step 1750 | val 3.4677
+ep 4 step 1800 | loss 3.0922 | lr 8.86e-05 | 14.05 it/s
+ep 4 step 1850 | loss 3.1495 | lr 8.79e-05 | 14.09 it/s
+ep 5 step 1900 | loss 3.6356 | lr 8.72e-05 | 14.07 it/s
+ep 5 step 1950 | loss 2.7374 | lr 8.65e-05 | 14.09 it/s
+ep 5 step 2000 | loss 3.3532 | lr 8.57e-05 | 14.09 it/s
+step 2000 | val 3.4338
+ep 5 step 2050 | loss 3.4757 | lr 8.50e-05 | 14.06 it/s
+ep 5 step 2100 | loss 3.6188 | lr 8.42e-05 | 14.10 it/s
+ep 5 step 2150 | loss 3.1483 | lr 8.34e-05 | 14.14 it/s
+ep 5 step 2200 | loss 3.5128 | lr 8.26e-05 | 14.19 it/s
+ep 5 step 2250 | loss 2.8828 | lr 8.18e-05 | 14.23 it/s
+step 2250 | val 3.3490
+ep 6 step 2300 | loss 2.7219 | lr 8.09e-05 | 14.16 it/s
+ep 6 step 2350 | loss 2.9817 | lr 8.01e-05 | 14.17 it/s
+ep 6 step 2400 | loss 2.8906 | lr 7.92e-05 | 14.20 it/s
+ep 6 step 2450 | loss 2.9742 | lr 7.83e-05 | 14.22 it/s
+ep 6 step 2500 | loss 3.2485 | lr 7.74e-05 | 14.24 it/s
+step 2500 | val 3.3217
+ep 6 step 2550 | loss 3.2251 | lr 7.65e-05 | 14.22 it/s
+ep 6 step 2600 | loss 2.8546 | lr 7.56e-05 | 14.24 it/s
+ep 7 step 2650 | loss 2.7738 | lr 7.47e-05 | 14.21 it/s
+ep 7 step 2700 | loss 2.9950 | lr 7.37e-05 | 14.22 it/s
+ep 7 step 2750 | loss 3.0930 | lr 7.28e-05 | 14.23 it/s
+step 2750 | val 3.3094
+ep 7 step 2800 | loss 2.6334 | lr 7.18e-05 | 14.18 it/s
+ep 7 step 2850 | loss 3.0720 | lr 7.09e-05 | 14.19 it/s
+ep 7 step 2900 | loss 3.3234 | lr 6.99e-05 | 14.19 it/s
+ep 7 step 2950 | loss 2.7659 | lr 6.89e-05 | 14.18 it/s
+ep 7 step 3000 | loss 3.0702 | lr 6.79e-05 | 14.18 it/s
+step 3000 | val 3.2819
+ep 8 step 3050 | loss 2.7750 | lr 6.69e-05 | 14.13 it/s
+ep 8 step 3100 | loss 2.7796 | lr 6.59e-05 | 14.16 it/s
+ep 8 step 3150 | loss 2.9815 | lr 6.48e-05 | 14.16 it/s
+ep 8 step 3200 | loss 2.7946 | lr 6.38e-05 | 14.16 it/s
+ep 8 step 3250 | loss 3.0175 | lr 6.28e-05 | 14.17 it/s
+step 3250 | val 3.2536
+ep 8 step 3300 | loss 2.8454 | lr 6.17e-05 | 14.13 it/s
+ep 8 step 3350 | loss 2.6071 | lr 6.07e-05 | 14.13 it/s
+ep 9 step 3400 | loss 2.8505 | lr 5.96e-05 | 14.11 it/s
+ep 9 step 3450 | loss 2.5890 | lr 5.86e-05 | 14.11 it/s
+ep 9 step 3500 | loss 2.8297 | lr 5.75e-05 | 14.12 it/s
+step 3500 | val 3.2257
+ep 9 step 3550 | loss 2.8935 | lr 5.64e-05 | 14.08 it/s
+ep 9 step 3600 | loss 2.7130 | lr 5.54e-05 | 14.09 it/s
+ep 9 step 3650 | loss 2.4497 | lr 5.43e-05 | 14.10 it/s
+ep 9 step 3700 | loss 2.8445 | lr 5.32e-05 | 14.11 it/s
+ep 9 step 3750 | loss 2.7947 | lr 5.22e-05 | 14.13 it/s
+step 3750 | val 3.2091
+ep 10 step 3800 | loss 3.0782 | lr 5.11e-05 | 14.07 it/s
+ep 10 step 3850 | loss 2.9292 | lr 5.00e-05 | 14.07 it/s
+ep 10 step 3900 | loss 3.1950 | lr 4.89e-05 | 14.07 it/s
+ep 10 step 3950 | loss 2.1897 | lr 4.78e-05 | 14.07 it/s
+ep 10 step 4000 | loss 2.8563 | lr 4.68e-05 | 14.08 it/s
+step 4000 | val 3.2026
+ep 10 step 4050 | loss 2.8710 | lr 4.57e-05 | 14.04 it/s
+ep 10 step 4100 | loss 2.8242 | lr 4.46e-05 | 14.05 it/s
+ep 11 step 4150 | loss 2.3639 | lr 4.36e-05 | 14.05 it/s
+ep 11 step 4200 | loss 2.4720 | lr 4.25e-05 | 14.07 it/s
+ep 11 step 4250 | loss 2.8530 | lr 4.14e-05 | 14.10 it/s
+step 4250 | val 3.1951
+ep 11 step 4300 | loss 2.5672 | lr 4.04e-05 | 14.10 it/s
+ep 11 step 4350 | loss 2.4548 | lr 3.93e-05 | 14.12 it/s
+ep 11 step 4400 | loss 2.3504 | lr 3.83e-05 | 14.14 it/s
+ep 11 step 4450 | loss 2.2061 | lr 3.72e-05 | 14.17 it/s
+ep 11 step 4500 | loss 2.4179 | lr 3.62e-05 | 14.19 it/s
+step 4500 | val 3.1829
+ep 12 step 4550 | loss 2.1707 | lr 3.52e-05 | 14.15 it/s
+ep 12 step 4600 | loss 2.4448 | lr 3.41e-05 | 14.15 it/s
+ep 12 step 4650 | loss 2.7190 | lr 3.31e-05 | 14.15 it/s
+ep 12 step 4700 | loss 2.3397 | lr 3.21e-05 | 14.15 it/s
+ep 12 step 4750 | loss 2.5045 | lr 3.11e-05 | 14.17 it/s
+step 4750 | val 3.1752
+ep 12 step 4800 | loss 2.6055 | lr 3.01e-05 | 14.17 it/s
+ep 12 step 4850 | loss 2.3021 | lr 2.91e-05 | 14.19 it/s
+ep 13 step 4900 | loss 2.2439 | lr 2.82e-05 | 14.19 it/s
+ep 13 step 4950 | loss 2.1351 | lr 2.72e-05 | 14.19 it/s
+ep 13 step 5000 | loss 2.4683 | lr 2.63e-05 | 14.20 it/s
+step 5000 | val 3.1762
+ep 13 step 5050 | loss 2.2126 | lr 2.53e-05 | 14.19 it/s
+ep 13 step 5100 | loss 2.9028 | lr 2.44e-05 | 14.19 it/s
+ep 13 step 5150 | loss 2.6667 | lr 2.35e-05 | 14.19 it/s
+ep 13 step 5200 | loss 2.7083 | lr 2.26e-05 | 14.19 it/s
+ep 13 step 5250 | loss 2.4593 | lr 2.17e-05 | 14.19 it/s
+step 5250 | val 3.1699
+ep 14 step 5300 | loss 2.1853 | lr 2.08e-05 | 14.16 it/s
+ep 14 step 5350 | loss 2.2404 | lr 1.99e-05 | 14.19 it/s
+ep 14 step 5400 | loss 2.6006 | lr 1.91e-05 | 14.21 it/s
+ep 14 step 5450 | loss 3.0709 | lr 1.82e-05 | 14.23 it/s
+ep 14 step 5500 | loss 2.4275 | lr 1.74e-05 | 14.25 it/s
+step 5500 | val 3.1679
+ep 14 step 5550 | loss 2.4591 | lr 1.66e-05 | 14.24 it/s
+ep 14 step 5600 | loss 2.2825 | lr 1.58e-05 | 14.26 it/s
+ep 15 step 5650 | loss 2.2178 | lr 1.50e-05 | 14.25 it/s
+ep 15 step 5700 | loss 2.2638 | lr 1.43e-05 | 14.25 it/s
+ep 15 step 5750 | loss 2.2352 | lr 1.35e-05 | 14.25 it/s
+step 5750 | val 3.1685
+ep 15 step 5800 | loss 2.1769 | lr 1.28e-05 | 14.25 it/s
+ep 15 step 5850 | loss 2.2985 | lr 1.21e-05 | 14.26 it/s
+ep 15 step 5900 | loss 2.4433 | lr 1.14e-05 | 14.26 it/s
+ep 15 step 5950 | loss 2.3057 | lr 1.07e-05 | 14.26 it/s
+ep 15 step 6000 | loss 1.9084 | lr 1.01e-05 | 14.27 it/s
+step 6000 | val 3.1596
+ep 16 step 6050 | loss 2.7433 | lr 9.42e-06 | 14.23 it/s
+ep 16 step 6100 | loss 2.4765 | lr 8.80e-06 | 14.23 it/s
+ep 16 step 6150 | loss 2.5354 | lr 8.20e-06 | 14.23 it/s
+ep 16 step 6200 | loss 2.4070 | lr 7.62e-06 | 14.23 it/s
+ep 16 step 6250 | loss 2.4026 | lr 7.06e-06 | 14.22 it/s
+step 6250 | val 3.1644
+ep 16 step 6300 | loss 2.4993 | lr 6.52e-06 | 14.22 it/s
+ep 16 step 6350 | loss 2.5338 | lr 6.00e-06 | 14.22 it/s
+ep 17 step 6400 | loss 2.1624 | lr 5.50e-06 | 14.21 it/s
+ep 17 step 6450 | loss 2.2248 | lr 5.02e-06 | 14.22 it/s
+ep 17 step 6500 | loss 2.5848 | lr 4.56e-06 | 14.23 it/s
+step 6500 | val 3.1608
+ep 17 step 6550 | loss 2.6481 | lr 4.12e-06 | 14.24 it/s
+ep 17 step 6600 | loss 2.0805 | lr 3.70e-06 | 14.26 it/s
+ep 17 step 6650 | loss 2.2055 | lr 3.31e-06 | 14.27 it/s
+ep 17 step 6700 | loss 2.5360 | lr 2.93e-06 | 14.29 it/s
+ep 17 step 6750 | loss 2.3665 | lr 2.58e-06 | 14.31 it/s
+step 6750 | val 3.1615
+ep 18 step 6800 | loss 2.1021 | lr 2.25e-06 | 14.29 it/s
+ep 18 step 6850 | loss 2.1239 | lr 1.94e-06 | 14.30 it/s
+ep 18 step 6900 | loss 2.0757 | lr 1.66e-06 | 14.32 it/s
+ep 18 step 6950 | loss 2.1294 | lr 1.39e-06 | 14.33 it/s
+ep 18 step 7000 | loss 2.5955 | lr 1.15e-06 | 14.35 it/s
+step 7000 | val 3.1606
+ep 18 step 7050 | loss 2.0181 | lr 9.35e-07 | 14.35 it/s
+ep 18 step 7100 | loss 2.2370 | lr 7.39e-07 | 14.37 it/s
+ep 19 step 7150 | loss 2.4105 | lr 5.66e-07 | 14.37 it/s
+ep 19 step 7200 | loss 2.4207 | lr 4.16e-07 | 14.38 it/s
+ep 19 step 7250 | loss 2.4929 | lr 2.89e-07 | 14.39 it/s
+step 7250 | val 3.1597
+ep 19 step 7300 | loss 2.3299 | lr 1.85e-07 | 14.40 it/s
+ep 19 step 7350 | loss 2.3010 | lr 1.04e-07 | 14.42 it/s
+ep 19 step 7400 | loss 2.5946 | lr 4.63e-08 | 14.44 it/s
+ep 19 step 7450 | loss 2.3016 | lr 1.16e-08 | 14.46 it/s
+ep 19 step 7500 | loss 2.2529 | lr 0.00e+00 | 14.48 it/s
+step 7500 | val 3.1595

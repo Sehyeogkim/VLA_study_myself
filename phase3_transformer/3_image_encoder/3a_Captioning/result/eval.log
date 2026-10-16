@@ -1,0 +1,42 @@
+loaded best.pt (step 7500, val 3.1595)
+
+[0] pred : A boy in a red jacket is surfing .
+    gt   : the boy laying face down on a skateboard is being pushed along the ground by another boy .
+    gt   : Two girls play on a skateboard in a courtyard .
+
+[1] pred : A man in a blue shirt and blue jeans is sitting on a bench .
+    gt   : A baseball player is tagged out sliding into second base .
+    gt   : A baseball player slides toward a base .
+
+[2] pred : A man in a red shirt and a woman in a red shirt is sitting on a bench .
+    gt   : A goal defending the goal in a hockey game .
+    gt   : A hockey goalie ready for the puck .
+
+[3] pred : A man and a woman are sitting on a bench .
+    gt   : A man in sunglasses and a hat is seen among a crowd .
+    gt   : A man wearing an oxford shirt , sunglasses , and a hat smirks .
+
+[4] pred : A man in a white shirt and tie is holding a sign .
+    gt   : A man in a blue shirt and beard looks at something that he is holding .
+    gt   : A man with a bread looking at his camera .
+
+[5] pred : A football player in a red uniform is running on the field .
+    gt   : A football player tries diving after another player .
+    gt   : A pro football player tackles another player on the goal line in a crowded stadium .
+
+[6] pred : A man is riding a bike down a forest path .
+    gt   : A group of people walking across a rope bridge .
+    gt   : A woman is crossing a rope bridge .
+
+[7] pred : A dog running through the snow .
+    gt   : A dog jumping in the snow at the edge of the forest
+    gt   : A dog jumps across the snowy ground .
+
+[8] pred : A brown dog is running through the grass .
+    gt   : A boy in red and a girl pink are walking through a low cut field .
+    gt   : The little boy and little girl are walking side by side .
+
+[9] pred : A brown dog is running through a field of wooded area .
+    gt   : A group of cyclers race around a track .
+    gt   : A group of people in colored outfits ride bikes around a track .
+

@@ -1,0 +1,32 @@
+loaded best.pt (step 3000, val 0.4474)
+[ 0] O Q: What is laying in the grass next to a shoe
+        pred: 'Cat.' | gt: 'Cat.'
+[ 1] O Q: What cut into the wood wall in a room with benches along the wall
+        pred: 'Window.' | gt: 'Window.'
+[ 2] X Q: Where does the sign say end continuum dale in parenthesis
+        pred: 'Building.' | gt: 'Street.'
+[ 3] O Q: What is shown with light blue decor
+        pred: 'Room.' | gt: 'Room.'
+[ 4] X Q: What walks through the snow
+        pred: 'Cars.' | gt: 'Skis.'
+[ 5] O Q: What is parked next to the truck
+        pred: 'Motorcycle.' | gt: 'Motorcycle.'
+[ 6] O Q: How many men stand in front of a private plane
+        pred: 'Two.' | gt: 'Two.'
+[ 7] O Q: What is the man holding while walking
+        pred: 'Umbrella.' | gt: 'Umbrella.'
+[ 8] O Q: What are walking around the small zoo enclosure
+        pred: 'Giraffes.' | gt: 'Giraffes.'
+[ 9] X Q: What is the color of the grass
+        pred: 'Green.' | gt: 'Brown.'
+[10] X Q: What does the finished embroidered craft match exactly
+        pred: 'Cake.' | gt: 'Picture.'
+[11] O Q: What is the color of the flowers
+        pred: 'Red.' | gt: 'Red.'
+[12] X Q: How many birds standing near the edge of a body of water
+        pred: 'One.' | gt: 'Two.'
+[13] O Q: What filled with food on a table
+        pred: 'Plate.' | gt: 'Plate.'
+[14] X Q: Where are some black animals eating pumpkins
+        pred: 'Tower.' | gt: 'Pen.'
+exact match: 182/300 = 60.7%

@@ -19,7 +19,7 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from configuration import Config
 
-from modeling import CaptioningModel
+from modeling_ver1 import CaptioningModel
 
 class CaptionDataset(torch.utils.data.Dataset):
     

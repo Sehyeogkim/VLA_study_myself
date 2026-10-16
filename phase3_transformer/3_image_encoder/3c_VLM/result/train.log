@@ -1,0 +1,80 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Generating train split:   0%|          | 0/46287 [00:00<?, ? examples/s]Generating train split:   0%|          | 100/46287 [00:00<01:20, 573.54 examples/s]Generating train split:   3%|▎         | 1200/46287 [00:00<00:10, 4485.10 examples/s]Generating train split:   5%|▌         | 2400/46287 [00:00<00:06, 6668.57 examples/s]Generating train split:   8%|▊         | 3500/46287 [00:00<00:06, 7006.31 examples/s]Generating train split:   9%|▉         | 4300/46287 [00:00<00:06, 6690.37 examples/s]Generating train split:  12%|█▏        | 5400/46287 [00:00<00:05, 7024.63 examples/s]Generating train split:  14%|█▍        | 6600/46287 [00:01<00:05, 7293.97 examples/s]Generating train split:  17%|█▋        | 7800/46287 [00:01<00:06, 6404.19 examples/s]Generating train split:  19%|█▉        | 9000/46287 [00:01<00:05, 6498.13 examples/s]Generating train split:  21%|██        | 9758/46287 [00:01<00:06, 5768.04 examples/s]Generating train split:  23%|██▎       | 10458/46287 [00:01<00:06, 5824.77 examples/s]Generating train split:  25%|██▌       | 11658/46287 [00:01<00:05, 6592.16 examples/s]Generating train split:  28%|██▊       | 12858/46287 [00:01<00:04, 7248.29 examples/s]Generating train split:  30%|███       | 14058/46287 [00:02<00:04, 7645.22 examples/s]Generating train split:  33%|███▎      | 15258/46287 [00:02<00:04, 7319.86 examples/s]Generating train split:  35%|███▌      | 16358/46287 [00:02<00:04, 7216.31 examples/s]Generating train split:  38%|███▊      | 17658/46287 [00:02<00:04, 7102.94 examples/s]Generating train split:  40%|████      | 18716/46287 [00:02<00:03, 7711.39 examples/s]Generating train split:  44%|████▎     | 20216/46287 [00:02<00:02, 9174.01 examples/s]Generating train split:  47%|████▋     | 21716/46287 [00:02<00:02, 10314.94 examples/s]Generating train split:  50%|█████     | 23316/46287 [00:03<00:02, 11291.34 examples/s]Generating train split:  54%|█████▍    | 24916/46287 [00:03<00:01, 12279.21 examples/s]Generating train split:  57%|█████▋    | 26316/46287 [00:03<00:02, 9409.31 examples/s] Generating train split:  60%|█████▉    | 27716/46287 [00:03<00:01, 9777.70 examples/s]Generating train split:  63%|██████▎   | 29373/46287 [00:03<00:01, 10008.11 examples/s]Generating train split:  67%|██████▋   | 30873/46287 [00:03<00:01, 10724.45 examples/s]Generating train split:  70%|███████   | 32473/46287 [00:03<00:01, 11780.39 examples/s]Generating train split:  73%|███████▎  | 33873/46287 [00:04<00:01, 11876.45 examples/s]Generating train split:  76%|███████▋  | 35373/46287 [00:04<00:00, 12547.08 examples/s]Generating train split:  79%|███████▉  | 36773/46287 [00:04<00:00, 9915.87 examples/s] Generating train split:  83%|████████▎ | 38630/46287 [00:04<00:00, 9771.49 examples/s]Generating train split:  86%|████████▋ | 40030/46287 [00:04<00:00, 9462.06 examples/s]Generating train split:  90%|████████▉ | 41530/46287 [00:04<00:00, 10512.98 examples/s]Generating train split:  93%|█████████▎| 43030/46287 [00:04<00:00, 11234.22 examples/s]Generating train split:  96%|█████████▌| 44530/46287 [00:05<00:00, 12002.49 examples/s]Generating train split: 100%|██████████| 46287/46287 [00:05<00:00, 11583.31 examples/s]Generating train split: 100%|██████████| 46287/46287 [00:05<00:00, 8865.05 examples/s] 
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-base-patch16-224
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+
+Notes:
+trainable params: 442,944
+step 50 | loss 2.8339 | lr 5.00e-04 | 3.09 it/s
+step 100 | loss 2.2163 | lr 1.00e-03 | 3.17 it/s
+step 150 | loss 0.9212 | lr 9.99e-04 | 3.20 it/s
+step 200 | loss 1.0723 | lr 9.97e-04 | 3.20 it/s
+step 250 | loss 1.4872 | lr 9.93e-04 | 3.20 it/s
+step 250 | val 1.0459
+step 300 | loss 0.6179 | lr 9.88e-04 | 3.09 it/s
+step 350 | loss 0.9862 | lr 9.82e-04 | 3.11 it/s
+step 400 | loss 0.9425 | lr 9.74e-04 | 3.11 it/s
+step 450 | loss 0.8623 | lr 9.64e-04 | 3.11 it/s
+step 500 | loss 0.5821 | lr 9.54e-04 | 3.12 it/s
+step 500 | val 0.7317
+step 550 | loss 0.6831 | lr 9.42e-04 | 3.06 it/s
+step 600 | loss 0.6106 | lr 9.28e-04 | 3.07 it/s
+step 650 | loss 1.1036 | lr 9.14e-04 | 3.08 it/s
+step 700 | loss 0.6335 | lr 8.98e-04 | 3.08 it/s
+step 750 | loss 0.6238 | lr 8.81e-04 | 3.09 it/s
+step 750 | val 0.6276
+step 800 | loss 0.4033 | lr 8.63e-04 | 3.05 it/s
+step 850 | loss 0.8369 | lr 8.44e-04 | 3.06 it/s
+step 900 | loss 0.5516 | lr 8.24e-04 | 3.06 it/s
+step 950 | loss 0.5666 | lr 8.03e-04 | 3.07 it/s
+step 1000 | loss 0.2614 | lr 7.81e-04 | 3.07 it/s
+step 1000 | val 0.5541
+step 1050 | loss 0.2841 | lr 7.58e-04 | 3.05 it/s
+step 1100 | loss 0.5167 | lr 7.34e-04 | 3.05 it/s
+step 1150 | loss 0.4889 | lr 7.10e-04 | 3.05 it/s
+step 1200 | loss 0.4587 | lr 6.85e-04 | 3.06 it/s
+step 1250 | loss 0.6090 | lr 6.60e-04 | 3.06 it/s
+step 1250 | val 0.5353
+step 1300 | loss 0.7994 | lr 6.34e-04 | 3.04 it/s
+step 1350 | loss 0.7430 | lr 6.07e-04 | 3.04 it/s
+step 1400 | loss 0.3752 | lr 5.81e-04 | 3.05 it/s
+step 1450 | loss 0.3353 | lr 5.54e-04 | 3.05 it/s
+step 1500 | loss 0.4468 | lr 5.27e-04 | 3.05 it/s
+step 1500 | val 0.5081
+step 1550 | loss 0.4049 | lr 5.00e-04 | 3.04 it/s
+step 1600 | loss 0.2881 | lr 4.73e-04 | 3.04 it/s
+step 1650 | loss 0.5804 | lr 4.46e-04 | 3.04 it/s
+step 1700 | loss 0.4555 | lr 4.19e-04 | 3.05 it/s
+step 1750 | loss 0.3553 | lr 3.93e-04 | 3.05 it/s
+step 1750 | val 0.4859
+step 1800 | loss 0.7807 | lr 3.66e-04 | 3.04 it/s
+step 1850 | loss 0.3403 | lr 3.40e-04 | 3.04 it/s
+step 1900 | loss 0.5716 | lr 3.15e-04 | 3.04 it/s
+step 1950 | loss 0.2195 | lr 2.90e-04 | 3.05 it/s
+step 2000 | loss 0.2012 | lr 2.66e-04 | 3.05 it/s
+step 2000 | val 0.4640
+step 2050 | loss 0.3675 | lr 2.42e-04 | 3.03 it/s
+step 2100 | loss 0.6548 | lr 2.19e-04 | 3.04 it/s
+step 2150 | loss 0.3326 | lr 1.97e-04 | 3.04 it/s
+step 2200 | loss 0.6311 | lr 1.76e-04 | 3.04 it/s
+step 2250 | loss 0.3855 | lr 1.56e-04 | 3.04 it/s
+step 2250 | val 0.4573
+step 2300 | loss 0.5109 | lr 1.37e-04 | 3.03 it/s
+step 2350 | loss 0.1261 | lr 1.19e-04 | 3.04 it/s
+step 2400 | loss 0.3682 | lr 1.02e-04 | 3.04 it/s
+step 2450 | loss 0.3933 | lr 8.62e-05 | 3.04 it/s
+step 2500 | loss 0.4713 | lr 7.16e-05 | 3.04 it/s
+step 2500 | val 0.4495
+step 2550 | loss 0.2987 | lr 5.82e-05 | 3.03 it/s
+step 2600 | loss 0.4069 | lr 4.62e-05 | 3.03 it/s
+step 2650 | loss 0.3028 | lr 3.55e-05 | 3.04 it/s
+step 2700 | loss 0.5201 | lr 2.62e-05 | 3.04 it/s
+step 2750 | loss 0.5800 | lr 1.82e-05 | 3.04 it/s
+step 2750 | val 0.4478
+step 2800 | loss 0.2431 | lr 1.17e-05 | 3.03 it/s
+step 2850 | loss 0.3116 | lr 6.59e-06 | 3.03 it/s
+step 2900 | loss 0.5142 | lr 2.93e-06 | 3.04 it/s
+step 2950 | loss 0.4915 | lr 7.33e-07 | 3.04 it/s
+step 3000 | loss 0.4609 | lr 0.00e+00 | 3.04 it/s
+step 3000 | val 0.4474
