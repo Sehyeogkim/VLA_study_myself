@@ -1,0 +1,65 @@
+             for each of those versions. Errors for versions not installed on
+             version is relevant. On Windows, ensure you've installed the
+             "full-shared" version which ships DLLs.
+          2. The PyTorch version (2.8.0+cu128) is not compatible with
+             table:
+          3. Another runtime dependency; see exceptions below.
+
+        
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+             for each of those versions. Errors for versions not installed on
+             version is relevant. On Windows, ensure you've installed the
+             "full-shared" version which ships DLLs.
+          2. The PyTorch version (2.8.0+cu128) is not compatible with
+             table:
+          3. Another runtime dependency; see exceptions below.
+
+        
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+observation.image (16, 2, 3, 96, 96)
+observation.state (16, 2)
+action (16, 16, 2)
+episode_index (16,)
+frame_index (16,)
+timestamp (16,)
+next.reward (16,)
+next.done (16,)
+next.success (16,)
+index (16,)
+task_index (16,)
+observation.image_is_pad (16, 2)
+action_is_pad (16, 16)
+task ('list', 16)
+Loading weights:   0%|          | 0/208 [00:00<?, ?it/s]Loading weights: 100%|██████████| 208/208 [00:00<00:00, 7832.57it/s]
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-base-patch16-224
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+
+Notes:
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]Loading weights: 100%|██████████| 272/272 [00:00<00:00, 4093.16it/s]
+loss (step 0, 랜덤 expert -> 약 2 근처면 정상) 1.8227533102035522
+params: new 21,738,626 (lr 0.0001) | pretrained 163,677,504 (lr 1e-05)
+step 50 | loss 0.5732 | lr 9.72e-05 | 2.00 it/s
+step 100 | loss 0.1418 | lr 8.12e-05 | 2.05 it/s
+step 150 | loss 0.3743 | lr 5.56e-05 | 2.07 it/s
+step 200 | loss 0.1320 | lr 2.83e-05 | 2.08 it/s
+step 250 | loss 0.0513 | lr 7.66e-06 | 2.08 it/s
+step 300 | loss 0.1082 | lr 0.00e+00 | 2.08 it/s
+step 300 | val 2.6104
+DONE

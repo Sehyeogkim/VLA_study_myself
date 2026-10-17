@@ -230,8 +230,36 @@ class SmolVLA_overall(torch.nn.Module):
         
         # 4. Masked MSE (action padding exist!)
         loss = ((v_t - u_t) ** 2 * valid).sum() / (valid.sum() * self.config.action_dim)
-        
+
         return loss
+
+    @torch.no_grad()
+    def sample_actions(self, image, text, state):
+        '''
+        추론 (VLA 판 generate): 관측 -> action chunk. main_infer 의 Step2~3 을 옮긴 것 + 정규화 / 역정규화
+            image : [B, 2, 3, 96, 96]  0~1 (이전 frame, 현재 frame)
+            text  : list[str] B 개
+            state : [B, 2]  픽셀 좌표 (정규화 전 원래 값)
+        return  : [B, 16, 2]  픽셀 좌표 action (env.step 에 바로 넣을 값)
+        '''
+        # 1. state 정규화 (학습 때와 같은 mean / std buffer)
+        state = (state - self.state_mean) / self.state_std                       # [B, 2]
+
+        # 2. prefix 1 번 -> cache (Euler 10 step 동안 고정)
+        cache = self.encoder(image, text, state).past_key_values
+
+        # 3. t=1 순수 noise 에서 시작 -> Euler 로 t=0 (action) 쪽으로
+        B = state.shape[0]
+        x_t = torch.randn(B, self.config.chunk_size, self.config.action_dim, device=state.device)   # [B, 16, 2]
+        t = torch.ones(B, device=state.device)                                   # [B]
+        dt = -self.config.T / self.config.num_denoise_steps                      # -0.1
+        for _ in range(self.config.num_denoise_steps):
+            v_t = self.expert(x_t, t, cache, self.encoder.pad_mask, self.encoder.att_1d_mask)       # 속도
+            x_t = x_t + dt * v_t
+            t = t + dt
+
+        # 4. 역정규화: 정규화된 공간 -> 픽셀 좌표
+        return x_t * self.action_std + self.action_mean                          # [B, 16, 2]
 
 from pathlib import Path
 from lerobot.datasets.lerobot_dataset import LeRobotDataset
