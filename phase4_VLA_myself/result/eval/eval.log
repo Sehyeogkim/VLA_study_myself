@@ -1,0 +1,65 @@
+Loading weights:   0%|          | 0/208 [00:00<?, ?it/s]Loading weights: 100%|██████████| 208/208 [00:00<00:00, 7282.99it/s]
+[transformers] [1mSiglipVisionModel LOAD REPORT[0m from: google/siglip-base-patch16-224
+Key                                                          | Status     |  | 
+-------------------------------------------------------------+------------+--+-
+
+Notes:
+Loading weights:   0%|          | 0/272 [00:00<?, ?it/s]Loading weights:  68%|██████▊   | 185/272 [00:00<00:00, 1845.44it/s]Loading weights: 100%|██████████| 272/272 [00:00<00:00, 1436.89it/s]
+loaded result/best.pt (step 4000, val 0.3632)
+/usr/local/lib/python3.12/dist-packages/pygame/pkgdata.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_stream, resource_exists
+obs pixels (96, 96, 3) uint8 | agent_pos [131. 258.] | action space Box(0.0, 512.0, (2,), float32)
+ep   0 | success False | coverage 0.962 | steps 300
+ep   1 | success False | coverage 0.000 | steps 300
+ep   2 | success False | coverage 0.581 | steps 300
+ep   3 | success False | coverage 0.991 | steps 300
+ep   4 | success True  | coverage 1.000 | steps 262
+ep   5 | success False | coverage 0.000 | steps 300
+ep   6 | success False | coverage 0.190 | steps 300
+ep   7 | success True  | coverage 1.000 | steps 214
+ep   8 | success True  | coverage 1.000 | steps 195
+ep   9 | success False | coverage 0.406 | steps 300
+ep  10 | success True  | coverage 1.000 | steps 280
+ep  11 | success False | coverage 0.965 | steps 300
+ep  12 | success False | coverage 0.378 | steps 300
+ep  13 | success False | coverage 0.945 | steps 300
+ep  14 | success False | coverage 0.739 | steps 300
+ep  15 | success False | coverage 0.957 | steps 300
+ep  16 | success False | coverage 0.976 | steps 300
+ep  17 | success False | coverage 0.947 | steps 300
+ep  18 | success False | coverage 0.958 | steps 300
+ep  19 | success False | coverage 0.995 | steps 300
+ep  20 | success False | coverage 0.964 | steps 300
+ep  21 | success False | coverage 0.001 | steps 300
+ep  22 | success False | coverage 0.974 | steps 300
+ep  23 | success False | coverage 0.900 | steps 300
+ep  24 | success False | coverage 0.956 | steps 300
+ep  25 | success False | coverage 0.533 | steps 300
+ep  26 | success False | coverage 0.507 | steps 300
+ep  27 | success True  | coverage 1.000 | steps 212
+ep  28 | success False | coverage 0.539 | steps 300
+ep  29 | success False | coverage 0.017 | steps 300
+ep  30 | success False | coverage 0.426 | steps 300
+ep  31 | success False | coverage 0.221 | steps 300
+ep  32 | success False | coverage 0.604 | steps 300
+ep  33 | success False | coverage 0.517 | steps 300
+ep  34 | success False | coverage 0.979 | steps 300
+ep  35 | success False | coverage 0.994 | steps 300
+ep  36 | success False | coverage 0.942 | steps 300
+ep  37 | success False | coverage 0.566 | steps 300
+ep  38 | success False | coverage 0.396 | steps 300
+ep  39 | success False | coverage 0.904 | steps 300
+ep  40 | success False | coverage 0.000 | steps 300
+ep  41 | success False | coverage 0.615 | steps 300
+ep  42 | success False | coverage 0.973 | steps 300
+ep  43 | success True  | coverage 1.000 | steps 73
+ep  44 | success False | coverage 0.774 | steps 300
+ep  45 | success True  | coverage 1.000 | steps 249
+ep  46 | success True  | coverage 1.000 | steps 192
+ep  47 | success False | coverage 0.818 | steps 300
+ep  48 | success False | coverage 0.929 | steps 300
+ep  49 | success False | coverage 0.896 | steps 300
+================================================
+success rate 16.0% | mean coverage 0.719 | 50 episodes
+saved: /workspace/phase4_VLA_myself/result/eval
+DONE
