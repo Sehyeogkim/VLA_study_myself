@@ -82,7 +82,6 @@ class VLMDataset(torch.utils.data.Dataset):
         return output
 
 
-
 def train_main():
 
     cfg = Config()

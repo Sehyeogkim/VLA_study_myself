@@ -40,3 +40,11 @@ class UtilsForVLA:
         att_2d_masks = cumsum[:, None, :] <= cumsum[:, :, None]
         pad_2d_masks = pad_masks[:, None, :] * pad_masks[:, :, None]
         return att_2d_masks & pad_2d_masks
+
+    #sample the time from the beta distribution.
+    def sample_time_beta(batch_size: int, device: str) -> torch.Tensor:
+        '''
+        beta distribution is a distribution that is defined on the interval [0,1].
+        we use the beta distribution to sample the time from the interval [0,1].
+        '''
+        return torch.distributions.Beta(1.5,1.0).sample((batch_size,)).to(device) * 0.999 + 0.001

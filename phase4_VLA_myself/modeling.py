@@ -133,6 +133,8 @@ class SmolVLA_expert(torch.nn.Module):
         from transformer import ExpertTransformer
         self.expert_transformer = ExpertTransformer(config)
 
+        self.velocity_projector = torch.nn.Linear(config.expert_hidden, config.action_dim)
+
     def embeddings(self, x_t, t):
 
         # [x_t, t] , x_t and t is [action_len, d_expert_hidden] each. -> so we need MLP
@@ -149,19 +151,87 @@ class SmolVLA_expert(torch.nn.Module):
     def forward(self, x_t, t, KV_cache, prefix_pad_mask, pefix_att_1D_mask):
 
         suffix = self.embeddings(x_t, t) #[B, 16, 384]
-        suffix_pad_mask = torch.ones(B, suffix.shape[1], dtype = torch.bool, device = x_t.device) # [B, 16] should be like that.
-        suffix_pad_mask = torch.cat([prefix_pad_mask, suffix_pad_mask], dim = 1)
+        B = suffix.shape[0]
+        # suffix_pad_mask = torch.ones(B, suffix.shape[1], dtype = torch.bool, device = x_t.device) # [B, 16] should be like that.
+        # suffix_pad_mask = torch.cat([prefix_pad_mask, suffix_pad_mask], dim = 1)
+        suffix_pad_mask = torch.ones(B, suffix.shape[1], dtype = torch.bool, device = x_t.device) # [B, 16] action 은 pad 없음
+        full_pad_mask = torch.cat([prefix_pad_mask, suffix_pad_mask], dim = 1)                   # [B, 413 + 16] prefix + suffix 전체
 
         # ATtention mask please in here. multitransofrmer block needs,
         # 1. suffix_emb, 2. 2D attent mask, 3. padding mask. -> create att_2d_mask in here.
-        B = suffix.shape[0]
         suffix_att_mask = torch.ones(B, suffix.shape[1], dtype = torch.bool, device = x_t.device) # [B, 16] should be like that.
         suffix_att_mask = torch.cat([pefix_att_1D_mask, suffix_att_mask], dim = 1)
-        att_2d_mask = UtilsForVLA.make_att_2d_masks(suffix_pad_mask, suffix_att_mask)
-        out = self.expert_transformer(suffix, att_2d_mask, KV_cache)
+        # att_2d_mask = UtilsForVLA.make_att_2d_masks(suffix_pad_mask, suffix_att_mask)
+        att_2d_mask = UtilsForVLA.make_att_2d_masks(full_pad_mask, suffix_att_mask)
+        # out = self.expert_transformer(suffix, att_2d_mask, KV_cache) # [B, L_suffix or T_suffix, d_expert_hidden]
+        # suffix position (RoPE 용): prefix 진짜 토큰 수 (pad 제외) 다음부터 = 406, 407, ... (SmolVLA denoise_step 과 같음)
+        T_suffix = suffix.shape[1]
+        position_ids = prefix_pad_mask.sum(dim=-1, keepdim=True) + torch.arange(T_suffix, device=x_t.device)   # [B, 16]
+        out = self.expert_transformer(suffix, att_2d_mask, KV_cache, position_ids) # [B, 16, d_expert_hidden]
 
-        return
+        # we need to get the velocity from the output hidden states.
+        # d_expert_hidden -> d_action
+        v_t = self.velocity_projector(out) # [B, L_suffix or T_suffix, d_action]
+        return v_t
 
+
+class SmolVLA_overall(torch.nn.Module):
+
+    # def __init__(self, config: Config):
+    def __init__(self, config: Config, stats: dict):
+        '''stats = train_ds.meta.stats (data/pusht/meta/stats.json, 값은 numpy array)'''
+        super().__init__()
+        self.config = config
+        self.encoder = SmolVLA_encoder(config)
+        self.expert = SmolVLA_expert(config)
+
+
+        f32 = lambda x: torch.tensor(x, dtype=torch.float32)
+        self.register_buffer("state_mean", f32(stats["observation.state"]["mean"]))   # [2]
+        self.register_buffer("state_std", f32(stats["observation.state"]["std"]))
+        self.register_buffer("action_mean", f32(stats["action"]["mean"]))             # [2]
+        self.register_buffer("action_std", f32(stats["action"]["std"]))
+
+    # def forward(self, image, text, state, action):
+    def forward(self, batch):
+        '''
+            1. Normalize the state and action
+            2. Encoder -> cache
+            3. Expert -> v_t
+            4. Masked MSE (action padding exist!)
+
+            return loss
+        '''
+        # batch (DataLoader 가 준 dict) 에서 꺼내기. action_is_pad 는 LeRobot 이 delta_timestamps 보고 만들어 준 것
+        image, text = batch["observation.image"], batch["task"]           # [B, 2, 3, 96, 96], list[str] B 개
+        state, action = batch["observation.state"], batch["action"]       # [B, 2], [B, 16, 2]
+        action_is_pad = batch["action_is_pad"]                            # [B, 16] True = episode 밖 가짜 칸
+
+        # 1. Normalize the state and action
+        state = (state - self.state_mean) / self.state_std # [B, 2]
+        action = (action - self.action_mean) / self.action_std # [B, 16, 2]
+
+        # 2. Encoder -> cache
+        cache = self.encoder(image, text, state).past_key_values
+
+        # 3. Expert -> v_t
+        from utills import UtilsForVLA
+        # noise = torch.randn(self.config.batch_size, self.config.chunk_size, self.config.action_dim) # [B, 16, 2]
+        # t = UtilsForVLA.sample_time_beta(self.config.batch_size, self.config.device) # [B]
+        # randn_like: 크기 / device 를 action 에 맞춤 (마지막 batch 가 작아도 OK, GPU 에서도 OK)
+        noise = torch.randn_like(action)                                         # [B, 16, 2]
+        t = UtilsForVLA.sample_time_beta(action.shape[0], action.device)         # [B]
+        tt = t[:, None, None] # [B, 1, 1]
+        x_t = tt * noise + (1 - tt) * action # [B, 16, 2]
+        u_t = noise - action # [B, 16, 2]
+
+        v_t = self.expert(x_t, t, cache, self.encoder.pad_mask, self.encoder.att_1d_mask) # we got velocity from the exerpt.
+        valid = (~action_is_pad)[..., None]                    # [B, 16, 1]
+        
+        # 4. Masked MSE (action padding exist!)
+        loss = ((v_t - u_t) ** 2 * valid).sum() / (valid.sum() * self.config.action_dim)
+        
+        return loss
 
 from pathlib import Path
 from lerobot.datasets.lerobot_dataset import LeRobotDataset
@@ -197,18 +267,15 @@ def main_infer():
 
     expert = SmolVLA_expert(config)
 
-    expert_step = 10
-    T = 1 
-    dt = T / expert_step
+    dt = -config.T / config.num_denoise_steps
 
-    for i in range(expert_step):
+    for i in range(config.num_denoise_steps):
         v_t = expert(x_t, t, cache, model.pad_mask, model.att_1d_mask) # we got velocity from the exerpt.
         x_t = x_t + v_t * dt # update the state.
+        t = t + dt # update the time.
 
     #Final action chunck is x_t
-
-
-    return
+    return x_t
 
 
 
