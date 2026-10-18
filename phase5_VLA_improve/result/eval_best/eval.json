@@ -1,0 +1,362 @@
+{
+ "summary": {
+  "ckpt": "result/best.pt",
+  "n_episodes": 50,
+  "n_action_steps": 8,
+  "success_rate": 0.18,
+  "mean_coverage": 0.6361839997401046,
+  "seconds": 209.766756772995
+ },
+ "episodes": [
+  {
+   "episode": 0,
+   "seed": 1000,
+   "success": false,
+   "coverage": 0.9767637200837878,
+   "steps": 300
+  },
+  {
+   "episode": 1,
+   "seed": 1001,
+   "success": false,
+   "coverage": 0.0,
+   "steps": 300
+  },
+  {
+   "episode": 2,
+   "seed": 1002,
+   "success": false,
+   "coverage": 0.1312294679417789,
+   "steps": 300
+  },
+  {
+   "episode": 3,
+   "seed": 1003,
+   "success": true,
+   "coverage": 1.0,
+   "steps": 111
+  },
+  {
+   "episode": 4,
+   "seed": 1004,
+   "success": false,
+   "coverage": 0.13776841596077322,
+   "steps": 300
+  },
+  {
+   "episode": 5,
+   "seed": 1005,
+   "success": true,
+   "coverage": 1.0,
+   "steps": 257
+  },
+  {
+   "episode": 6,
+   "seed": 1006,
+   "success": false,
+   "coverage": 0.3934486042650173,
+   "steps": 300
+  },
+  {
+   "episode": 7,
+   "seed": 1007,
+   "success": true,
+   "coverage": 1.0,
+   "steps": 126
+  },
+  {
+   "episode": 8,
+   "seed": 1008,
+   "success": false,
+   "coverage": 0.0033558529898065096,
+   "steps": 300
+  },
+  {
+   "episode": 9,
+   "seed": 1009,
+   "success": false,
+   "coverage": 0.9683484701578452,
+   "steps": 300
+  },
+  {
+   "episode": 10,
+   "seed": 1010,
+   "success": false,
+   "coverage": 0.9010991500098506,
+   "steps": 300
+  },
+  {
+   "episode": 11,
+   "seed": 1011,
+   "success": false,
+   "coverage": 0.9822248145115653,
+   "steps": 300
+  },
+  {
+   "episode": 12,
+   "seed": 1012,
+   "success": false,
+   "coverage": 0.0,
+   "steps": 300
+  },
+  {
+   "episode": 13,
+   "seed": 1013,
+   "success": false,
+   "coverage": 0.8571858948858206,
+   "steps": 300
+  },
+  {
+   "episode": 14,
+   "seed": 1014,
+   "success": false,
+   "coverage": 0.2599901440967228,
+   "steps": 300
+  },
+  {
+   "episode": 15,
+   "seed": 1015,
+   "success": false,
+   "coverage": 0.9725179571719418,
+   "steps": 300
+  },
+  {
+   "episode": 16,
+   "seed": 1016,
+   "success": true,
+   "coverage": 1.0,
+   "steps": 253
+  },
+  {
+   "episode": 17,
+   "seed": 1017,
+   "success": true,
+   "coverage": 1.0,
+   "steps": 245
+  },
+  {
+   "episode": 18,
+   "seed": 1018,
+   "success": true,
+   "coverage": 1.0,
+   "steps": 263
+  },
+  {
+   "episode": 19,
+   "seed": 1019,
+   "success": false,
+   "coverage": 0.9577807198738263,
+   "steps": 300
+  },
+  {
+   "episode": 20,
+   "seed": 1020,
+   "success": false,
+   "coverage": 0.9762739283029044,
+   "steps": 300
+  },
+  {
+   "episode": 21,
+   "seed": 1021,
+   "success": false,
+   "coverage": 0.23767511909989475,
+   "steps": 300
+  },
+  {
+   "episode": 22,
+   "seed": 1022,
+   "success": false,
+   "coverage": 0.9258851012924696,
+   "steps": 300
+  },
+  {
+   "episode": 23,
+   "seed": 1023,
+   "success": false,
+   "coverage": 0.0,
+   "steps": 300
+  },
+  {
+   "episode": 24,
+   "seed": 1024,
+   "success": false,
+   "coverage": 0.19192314198470703,
+   "steps": 300
+  },
+  {
+   "episode": 25,
+   "seed": 1025,
+   "success": false,
+   "coverage": 0.6103040663516509,
+   "steps": 300
+  },
+  {
+   "episode": 26,
+   "seed": 1026,
+   "success": false,
+   "coverage": 0.6051783436189124,
+   "steps": 300
+  },
+  {
+   "episode": 27,
+   "seed": 1027,
+   "success": false,
+   "coverage": 0.8975839036714158,
+   "steps": 300
+  },
+  {
+   "episode": 28,
+   "seed": 1028,
+   "success": false,
+   "coverage": 0.7994686580965973,
+   "steps": 300
+  },
+  {
+   "episode": 29,
+   "seed": 1029,
+   "success": false,
+   "coverage": 0.016687909890246887,
+   "steps": 300
+  },
+  {
+   "episode": 30,
+   "seed": 1030,
+   "success": false,
+   "coverage": 0.754061633313778,
+   "steps": 300
+  },
+  {
+   "episode": 31,
+   "seed": 1031,
+   "success": true,
+   "coverage": 1.0,
+   "steps": 185
+  },
+  {
+   "episode": 32,
+   "seed": 1032,
+   "success": true,
+   "coverage": 1.0,
+   "steps": 145
+  },
+  {
+   "episode": 33,
+   "seed": 1033,
+   "success": false,
+   "coverage": 0.1287459823754614,
+   "steps": 300
+  },
+  {
+   "episode": 34,
+   "seed": 1034,
+   "success": false,
+   "coverage": 0.9807865281291591,
+   "steps": 300
+  },
+  {
+   "episode": 35,
+   "seed": 1035,
+   "success": false,
+   "coverage": 0.10802451430253042,
+   "steps": 300
+  },
+  {
+   "episode": 36,
+   "seed": 1036,
+   "success": false,
+   "coverage": 0.0,
+   "steps": 300
+  },
+  {
+   "episode": 37,
+   "seed": 1037,
+   "success": false,
+   "coverage": 0.4143732002840613,
+   "steps": 300
+  },
+  {
+   "episode": 38,
+   "seed": 1038,
+   "success": false,
+   "coverage": 0.809419308269667,
+   "steps": 300
+  },
+  {
+   "episode": 39,
+   "seed": 1039,
+   "success": false,
+   "coverage": 0.9464393876307682,
+   "steps": 300
+  },
+  {
+   "episode": 40,
+   "seed": 1040,
+   "success": false,
+   "coverage": 0.5037218979773008,
+   "steps": 300
+  },
+  {
+   "episode": 41,
+   "seed": 1041,
+   "success": false,
+   "coverage": 0.9803952542685613,
+   "steps": 300
+  },
+  {
+   "episode": 42,
+   "seed": 1042,
+   "success": false,
+   "coverage": 0.9659955317923244,
+   "steps": 300
+  },
+  {
+   "episode": 43,
+   "seed": 1043,
+   "success": true,
+   "coverage": 1.0,
+   "steps": 144
+  },
+  {
+   "episode": 44,
+   "seed": 1044,
+   "success": false,
+   "coverage": 0.9271919957442837,
+   "steps": 300
+  },
+  {
+   "episode": 45,
+   "seed": 1045,
+   "success": false,
+   "coverage": 0.9521646777323188,
+   "steps": 300
+  },
+  {
+   "episode": 46,
+   "seed": 1046,
+   "success": false,
+   "coverage": 0.16375649675593196,
+   "steps": 300
+  },
+  {
+   "episode": 47,
+   "seed": 1047,
+   "success": false,
+   "coverage": 0.507333781315719,
+   "steps": 300
+  },
+  {
+   "episode": 48,
+   "seed": 1048,
+   "success": false,
+   "coverage": 0.0,
+   "steps": 300
+  },
+  {
+   "episode": 49,
+   "seed": 1049,
+   "success": false,
+   "coverage": 0.8640964128558317,
+   "steps": 300
+  }
+ ]
+}

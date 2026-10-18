@@ -129,10 +129,10 @@ class MultiHeadCrossAttention(nn.Module):
         rope = (cos, sin) 각 [B, T_suffix, Dh], None 이면 RoPE 안 씀
         '''
         k,v = KV_cache
-        B, _, T_prefix, _ = k.shape
-        # [ B, 3, T_prefix, D] -> [B, T_prefix, 3 * D]
-        k = k.transpose(1,2).contiguous().view(B, T_prefix, self.d_kv_head)
-        v = v.transpose(1,2).contiguous().view(B, T_prefix, self.d_kv_head)
+        _, _, T_prefix, _ = k.shape
+        # [B, 3, T_prefix, 64] -> [B, T_prefix, 192]
+        k = self.merge(k)
+        v = self.merge(v)
 
         q = self.W_q(x) # [B, T_suffix, d_q_head]
         k = self.W_k(k) # [B, T_prefix, d_kv_head]
@@ -166,8 +166,6 @@ class MultiHeadCrossAttention(nn.Module):
         out = self.merge(out)    # [B, 9, T, 64] -> [B, T, 576]
 
         return self.W_o(out) # [B, T, D] -> [B, T, D]
-
-    
 
 
 # Transformer block
